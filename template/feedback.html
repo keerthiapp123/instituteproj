@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    {% block b1 %}
+      <h2>feedback</h2>
+      <div class="container">
+        <div class="row">
+            <div class="col col-md-6">
+                <form action="" method="post">{% csrf_token %}
+                    <label for="">Enter the name</label>
+                    <input type="text" name="name" class="form-control">
+                    <label for="">Enter the ratings</label>
+                    <input type="number" name="ratings" class="form-control">
+                    <label for="">Enter the comments</label>
+                    <input type="textarea" name="comments" class="form-control">
+                
+                   <center><input type="submit" value="submit" class="btn btn-primary">
+                    <input type="submit" value="cancel" class="btn btn-warning"></center> 
+                </form>
+
+
+                {% for f in fd %}
+                <ul>
+                    <li>{{f.name}}</li>
+                    <li>{{f.ratings}}</li>
+                    <li>{{f.comments}}</li>
+                    <li>{{f.createdat}}</li>
+                    **************************************
+                </ul>
+                {% endfor %}
+
+            </div>
+        </div>
+      </div>
+
+
+    
+    {% endblock b1 %}
+    
+</body>
+</html>

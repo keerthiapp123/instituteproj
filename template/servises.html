@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block b1 %}
+     <table class="table table-stripped">
+        <thead>
+            <tr class="bg-primary">
+                <th>courseno</th>
+                <th>coursename</th>
+                <th>timings</th>
+                <th>startdate</th>
+                <th>duration</th>
+                <th>coursefee</th>
+                <th>trainername</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in sd %}
+            <tr>
+                <td>{{s.courseno}}</td>
+                <td>{{s.coursename}}</td>
+                <td>{{s.timings}}</td>
+                <td>{{s.startdate}}</td>
+                <td>{{s.duration}}</td>
+                <td>{{s.coursefee}}</td>
+                <td>{{s.trainername}}</td>
+            </tr>
+
+           {% endfor %} 
+        </tbody>
+
+     </table>
+     {% endblock b1 %}
+    
+</body>
+</html>
